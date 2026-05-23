@@ -1,0 +1,16 @@
+{
+  "name": "ria-website",
+  "version": "1.0.0",
+  "description": "RIA airline website clone",
+  "type": "module",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "screenshot": "node screenshot.mjs http://localhost:3000",
+    "screenshot:plan": "node screenshot.mjs http://localhost:3000/plan-book.html plan-book",
+    "screenshot:discover": "node screenshot.mjs http://localhost:3000/discover-riyadh.html discover",
+    "screenshot:all": "node screenshot.mjs http://localhost:3000 home && node screenshot.mjs http://localhost:3000/plan-book.html plan-book && node screenshot.mjs http://localhost:3000/discover-riyadh.html discover"
+  },
+  "dependencies": {
+    "puppeteer": "^25.0.4"
+  }
+}

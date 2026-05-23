@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Generated screenshots (QA only, not part of the site)
+temporary screenshots/
+
+# Reference images (large, copyrighted, not part of deployment)
+www.riyadhair.com_*.png
+
+# Claude project config
+CLAUDE.md
+
+# OS files
+.DS_Store
+Thumbs.db

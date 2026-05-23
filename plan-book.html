@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIA — Plan &amp; Book</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Plan page specific overrides */
+    .plan-hero {
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 0 3rem;
+    }
+    .plan-hero-mesh {
+      position: absolute; inset: 0; opacity: .07;
+      background-image:
+        linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
+    }
+    .plan-hero-radial {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 70% 60% at 60% 50%, rgba(74,54,160,.35) 0%, transparent 70%);
+    }
+    .plan-hero-content {
+      position: relative; z-index: 2;
+      max-width: 1280px; margin: 0 auto; padding: 0 2.5rem;
+    }
+    .plan-hero-label {
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--orange); margin-bottom: .65rem;
+    }
+    .plan-hero-title {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 800; color: var(--white);
+      line-height: 1.0; letter-spacing: -.025em;
+      max-width: 580px; margin-bottom: 1rem;
+    }
+    .plan-hero-sub {
+      font-size: .98rem; color: rgba(255,255,255,.6);
+      max-width: 460px; line-height: 1.65; margin-bottom: 2.5rem;
+    }
+    .plan-search-wrap {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-l);
+      padding: 1.5rem;
+      backdrop-filter: blur(12px);
+      max-width: 900px;
+    }
+
+    /* Where we fly */
+    .fly-section { padding: 5.5rem 0; background: #fff; }
+    .fly-inner {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 4rem; align-items: center;
+    }
+    @media (max-width: 900px) { .fly-inner { grid-template-columns: 1fr; } }
+    .fly-text-title { font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 700; color: var(--text-dark); line-height: 1.1; margin-bottom: .85rem; }
+    .fly-text-body { font-size: .92rem; color: var(--grey-text); line-height: 1.7; margin-bottom: 1.75rem; }
+    .fly-stats {
+      display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;
+    }
+    .fly-stat { }
+    .fly-stat-num { font-size: 2rem; font-weight: 800; color: var(--bg-nav); line-height: 1; }
+    .fly-stat-label { font-size: .78rem; color: var(--grey-text); margin-top: .2rem; }
+
+    /* Route tags */
+    .route-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+    .route-tag {
+      background: var(--grey-light); border: 1.5px solid var(--indigo-20);
+      border-radius: var(--radius-xl); padding: .35rem .9rem;
+      font-size: .8rem; font-weight: 500; color: var(--text-dark);
+      cursor: pointer; transition: var(--t);
+    }
+    .route-tag:hover { border-color: var(--bg-nav); color: var(--bg-nav); background: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/><path d="M20 4L28 18L22 28L20 22L18 18L20 4Z" fill="rgba(255,255,255,0.3)"/></svg>
+    <span class="nav-logo-name">RIA</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Book</a>
+    <a href="#" class="nav-link">Manage</a>
+    <a href="plan-book.html" class="nav-link active">Destinations</a>
+    <a href="discover-riyadh.html" class="nav-link">Discover</a>
+    <a href="#" class="nav-link">About</a>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></button>
+    <button class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+    <button class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></button>
+    <button class="nav-icon-btn" id="menuBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/></svg>
+      <span class="nav-logo-name">RIA</span>
+    </a>
+    <button class="nav-icon-btn" id="menuClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <a href="index.html" class="mobile-menu-link">Book <span>›</span></a>
+  <a href="#" class="mobile-menu-link">Manage <span>›</span></a>
+  <a href="plan-book.html" class="mobile-menu-link">Destinations <span>›</span></a>
+  <a href="discover-riyadh.html" class="mobile-menu-link">Discover <span>›</span></a>
+  <a href="#" class="mobile-menu-link">About <span>›</span></a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PLAN HERO + SEARCH
+════════════════════════════════════════════════════════════ -->
+<section class="plan-hero">
+  <div class="plan-hero-mesh"></div>
+  <div class="plan-hero-radial"></div>
+  <div class="plan-hero-content">
+    <p class="plan-hero-label fade-up">Plan &amp; Book</p>
+    <h1 class="plan-hero-title fade-up d1">Plan your next journey with ease</h1>
+    <p class="plan-hero-sub fade-up d2">Discover RIA destinations, explore travel options, and book with confidence. We've made it simple, intuitive, and convenient for you. Your next adventure begins here.</p>
+
+    <div class="plan-search-wrap fade-up d3">
+      <div class="search-tabs" style="border-bottom-color:rgba(255,255,255,.1); margin-bottom:1.25rem;">
+        <button class="search-tab active" onclick="setTab(this)" style="color:rgba(255,255,255,.5);">One way</button>
+        <button class="search-tab" onclick="setTab(this)" style="color:rgba(255,255,255,.5);">Round trip</button>
+        <button class="search-tab" onclick="setTab(this)" style="color:rgba(255,255,255,.5);">Multi-city</button>
+      </div>
+      <div class="search-fields" style="grid-template-columns: 1fr 1fr 1fr 1fr auto;">
+        <div class="sf-group">
+          <label class="sf-label" style="color:rgba(255,255,255,.4);">From</label>
+          <input class="sf-input" type="text" placeholder="Riyadh (RUH)" style="background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.12); color:var(--white);">
+        </div>
+        <div class="sf-group">
+          <label class="sf-label" style="color:rgba(255,255,255,.4);">To</label>
+          <input class="sf-input" type="text" placeholder="Where to?" style="background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.12); color:var(--white);">
+        </div>
+        <div class="sf-group">
+          <label class="sf-label" style="color:rgba(255,255,255,.4);">Departure</label>
+          <input class="sf-input" type="date" style="background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.12); color:rgba(255,255,255,.7); colorscheme:dark;">
+        </div>
+        <div class="sf-group">
+          <label class="sf-label" style="color:rgba(255,255,255,.4);">Return</label>
+          <input class="sf-input" type="date" style="background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.12); color:rgba(255,255,255,.7); colorscheme:dark;">
+        </div>
+        <button class="search-btn">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHERE WE FLY
+════════════════════════════════════════════════════════════ -->
+<section class="fly-section">
+  <div class="container">
+    <div style="max-width:680px;">
+      <p class="section-eyebrow">Our network</p>
+      <h2 class="fly-text-title">Where we fly</h2>
+      <p class="fly-text-body">Every destination tells a story. Discover RIA's world map and find the connections that inspire you. RIA connects Riyadh to the most iconic cities across six continents — and our network is growing every season.</p>
+      <a href="#" class="btn btn-dark">More destinations</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PLANE IMAGE BAND
+════════════════════════════════════════════════════════════ -->
+<div class="plane-band" style="min-height:380px;">
+  <div class="plane-band-bg" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80');"></div>
+  <div class="plane-band-overlay"></div>
+  <div class="plane-band-content">
+    <p style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.5rem;">RIA Fleet</p>
+    <h2 class="plane-band-title">A fleet built for the future</h2>
+    <p class="plane-band-sub">State-of-the-art aircraft, industry-leading fuel efficiency, and a cabin designed for maximum comfort — this is how RIA flies.</p>
+    <a href="#" class="btn btn-white">Explore our fleet</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MANAGE YOUR ORDER
+════════════════════════════════════════════════════════════ -->
+<section class="manage-section">
+  <div class="container">
+    <div style="max-width:600px; margin-bottom:2.5rem;">
+      <p class="section-eyebrow">Your booking</p>
+      <h2 class="section-title">Manage your order</h2>
+      <p class="section-subtitle">Review and update booking information in a few easy steps. Whether you need to add baggage, change a seat, or make any modifications, RIA makes it simple.</p>
+    </div>
+    <div class="manage-grid">
+      <div class="manage-card">
+        <div class="manage-card-icon">🧳</div>
+        <h3 class="manage-card-title">Add Baggage</h3>
+        <p class="manage-card-desc">Purchase extra baggage allowance before your flight for the best rates.</p>
+        <div class="manage-card-arrow">›</div>
+      </div>
+      <div class="manage-card">
+        <div class="manage-card-icon">💺</div>
+        <h3 class="manage-card-title">Choose Your Seat</h3>
+        <p class="manage-card-desc">Select your preferred seat — window, aisle, or extra legroom.</p>
+        <div class="manage-card-arrow">›</div>
+      </div>
+      <div class="manage-card">
+        <div class="manage-card-icon">🍽</div>
+        <h3 class="manage-card-title">Special Meals</h3>
+        <p class="manage-card-desc">Request a special dietary meal up to 24 hours before departure.</p>
+        <div class="manage-card-arrow">›</div>
+      </div>
+      <div class="manage-card">
+        <div class="manage-card-icon">♿</div>
+        <h3 class="manage-card-title">Special Assistance</h3>
+        <p class="manage-card-desc">Arrange wheelchair assistance, medical needs, or unaccompanied minors.</p>
+        <div class="manage-card-arrow">›</div>
+      </div>
+      <div class="manage-card">
+        <div class="manage-card-icon">📋</div>
+        <h3 class="manage-card-title">Check In Online</h3>
+        <p class="manage-card-desc">Check in from 24 hours before departure and download your boarding pass.</p>
+        <div class="manage-card-arrow">›</div>
+      </div>
+      <div class="manage-card">
+        <div class="manage-card-icon">🔄</div>
+        <h3 class="manage-card-title">Change or Cancel</h3>
+        <p class="manage-card-desc">Need to reschedule? Modify or cancel your booking online with ease.</p>
+        <div class="manage-card-arrow">›</div>
+      </div>
+    </div>
+
+    <!-- Laptop / device image — matches reference -->
+    <div style="margin-top:3rem; border-radius:var(--radius-l); overflow:hidden; aspect-ratio:16/7;">
+      <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1600&q=80" alt="RIA booking platform" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NEWSLETTER
+════════════════════════════════════════════════════════════ -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div>
+        <p class="section-eyebrow">Stay in the loop</p>
+        <h2 class="nl-title">Subscribe to our newsletter and be the first to know what's coming</h2>
+        <p class="nl-sub">New routes, exclusive fares, and early-bird offers delivered to your inbox.</p>
+      </div>
+      <div>
+        <form class="nl-form" onsubmit="return false">
+          <input class="nl-input" type="email" placeholder="Your email address">
+          <button class="nl-btn" type="submit">Subscribe</button>
+        </form>
+        <p style="font-size:.75rem; color:rgba(255,255,255,.3); margin-top:.75rem;">Unsubscribe at any time. Privacy Policy applies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-logo">
+          <svg width="28" height="22" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/></svg>
+          <span class="footer-brand-name">RIA</span>
+        </div>
+        <p class="footer-brand-desc">Saudi Arabia's flagship airline — connecting the Kingdom to the world with pride and purpose.</p>
+        <div class="footer-socials">
+          <a class="footer-soc" href="#" title="Twitter/X">𝕏</a>
+          <a class="footer-soc" href="#" title="Instagram">📷</a>
+          <a class="footer-soc" href="#" title="LinkedIn">in</a>
+          <a class="footer-soc" href="#" title="YouTube">▶</a>
+          <a class="footer-soc" href="#" title="Facebook">f</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">RIA</p>
+        <ul class="footer-col-links">
+          <li><a href="#" class="footer-col-link">About RIA</a></li>
+          <li><a href="#" class="footer-col-link">Our Fleet</a></li>
+          <li><a href="plan-book.html" class="footer-col-link">Destinations</a></li>
+          <li><a href="#" class="footer-col-link">Sustainability</a></li>
+          <li><a href="#" class="footer-col-link">Careers</a></li>
+          <li><a href="#" class="footer-col-link">Press Room</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Experience</p>
+        <ul class="footer-col-links">
+          <li><a href="#" class="footer-col-link">Business Class</a></li>
+          <li><a href="#" class="footer-col-link">Economy Class</a></li>
+          <li><a href="#" class="footer-col-link">In-flight dining</a></li>
+          <li><a href="#" class="footer-col-link">Entertainment</a></li>
+          <li><a href="#" class="footer-col-link">Lounges</a></li>
+          <li><a href="#" class="footer-col-link">Sfeer</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Connect with us</p>
+        <ul class="footer-col-links">
+          <li><a href="#" class="footer-col-link">Help Centre</a></li>
+          <li><a href="#" class="footer-col-link">Contact Us</a></li>
+          <li><a href="#" class="footer-col-link">Feedback</a></li>
+          <li><a href="#" class="footer-col-link">Lost &amp; Found</a></li>
+          <li><a href="#" class="footer-col-link">Special Assistance</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Business Solutions</p>
+        <ul class="footer-col-links" style="margin-bottom:1.5rem;">
+          <li><a href="#" class="footer-col-link">Corporate Travel</a></li>
+          <li><a href="#" class="footer-col-link">RIA Cargo</a></li>
+          <li><a href="#" class="footer-col-link">Travel Agencies</a></li>
+          <li><a href="#" class="footer-col-link">Charter Flights</a></li>
+        </ul>
+        <p class="footer-col-title">Newsletter</p>
+        <input class="footer-newsletter-input" type="email" placeholder="Enter your email">
+        <button class="footer-newsletter-btn">Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 RIA. All rights reserved.</p>
+      <div class="footer-pif">
+        <span>A</span>
+        <span class="footer-pif-badge">PIF Company</span>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

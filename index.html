@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIA — The journey begins here</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════════ -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/>
+      <path d="M20 4L28 18L22 28L20 22L18 18L20 4Z" fill="rgba(255,255,255,0.3)"/>
+    </svg>
+    <span class="nav-logo-name">RIA</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html" class="nav-link active">Book</a>
+    <a href="#" class="nav-link">Manage</a>
+    <a href="plan-book.html" class="nav-link">Destinations</a>
+    <a href="discover-riyadh.html" class="nav-link">Discover</a>
+    <a href="#" class="nav-link">About</a>
+  </div>
+
+  <div class="nav-actions">
+    <button class="nav-icon-btn" aria-label="Bag">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    </button>
+    <button class="nav-icon-btn" aria-label="Profile">
+      <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </button>
+    <button class="nav-icon-btn" aria-label="Language">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+    </button>
+    <button class="nav-icon-btn" id="menuBtn" aria-label="Menu">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/></svg>
+      <span class="nav-logo-name">RIA</span>
+    </a>
+    <button class="nav-icon-btn" id="menuClose" aria-label="Close">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <a href="index.html" class="mobile-menu-link">Book <span>›</span></a>
+  <a href="#" class="mobile-menu-link">Manage <span>›</span></a>
+  <a href="plan-book.html" class="mobile-menu-link">Destinations <span>›</span></a>
+  <a href="discover-riyadh.html" class="mobile-menu-link">Discover <span>›</span></a>
+  <a href="#" class="mobile-menu-link">About <span>›</span></a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1920&q=80')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="section-eyebrow fade-up" style="margin-bottom:.75rem;">Now taking flight</p>
+    <h1 class="hero-title fade-up d1">The journey<br>begins here</h1>
+    <p class="hero-sub fade-up d2">Discover RIA destinations, explore travel options, and book with confidence. We've made it simple, intuitive, and convenient for you. Your next adventure begins here.</p>
+    <div class="hero-ctas fade-up d3">
+      <a href="plan-book.html" class="btn btn-white btn-lg">Explore destinations</a>
+      <a href="#" class="btn btn-outline-white btn-lg">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FLIGHT SEARCH WIDGET
+════════════════════════════════════════════════════════════ -->
+<div class="section-sm" style="background:#fff;">
+  <div class="container">
+    <div class="search-widget overlap">
+      <div class="search-tabs">
+        <button class="search-tab active" onclick="setTab(this)">One way</button>
+        <button class="search-tab" onclick="setTab(this)">Round trip</button>
+        <button class="search-tab" onclick="setTab(this)">Multi-city</button>
+      </div>
+      <div class="search-fields">
+        <div class="sf-group">
+          <label class="sf-label">From</label>
+          <input class="sf-input" type="text" placeholder="Riyadh (RUH)">
+        </div>
+        <div class="sf-group">
+          <label class="sf-label">To</label>
+          <input class="sf-input" type="text" placeholder="Where to?">
+        </div>
+        <div class="sf-group">
+          <label class="sf-label">Departure</label>
+          <input class="sf-input" type="date">
+        </div>
+        <div class="sf-group">
+          <label class="sf-label">Return</label>
+          <input class="sf-input" type="date">
+        </div>
+        <div class="sf-group">
+          <label class="sf-label">Passengers</label>
+          <input class="sf-input" type="text" placeholder="1 adult">
+        </div>
+        <button class="search-btn">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOR JOURNEYS THAT GO FURTHER — DESTINATIONS CAROUSEL
+════════════════════════════════════════════════════════════ -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <p class="section-eyebrow">Where RIA flies</p>
+        <h2 class="section-title">For journeys that go further</h2>
+        <p class="section-subtitle">Discover our growing network of destinations across the globe.</p>
+      </div>
+      <a href="plan-book.html" class="btn btn-dark">View all destinations</a>
+    </div>
+
+    <div id="destCarousel" class="carousel-outer">
+      <div class="carousel-track" id="destTrack">
+        <div class="dest-card">
+          <img class="dest-card-img" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=75" alt="Paris" loading="lazy">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-body">
+            <div class="dest-card-city">Paris</div>
+            <div class="dest-card-country">France</div>
+            <span class="dest-card-tag">From SAR 1,890</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <img class="dest-card-img" src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=75" alt="London" loading="lazy">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-body">
+            <div class="dest-card-city">London</div>
+            <div class="dest-card-country">United Kingdom</div>
+            <span class="dest-card-tag">From SAR 2,100</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <img class="dest-card-img" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=75" alt="Tokyo" loading="lazy">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-body">
+            <div class="dest-card-city">Tokyo</div>
+            <div class="dest-card-country">Japan</div>
+            <span class="dest-card-tag">From SAR 2,450</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <img class="dest-card-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=75" alt="Dubai" loading="lazy">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-body">
+            <div class="dest-card-city">Dubai</div>
+            <div class="dest-card-country">UAE</div>
+            <span class="dest-card-tag">From SAR 890</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <img class="dest-card-img" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=75" alt="New York" loading="lazy">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-body">
+            <div class="dest-card-city">New York</div>
+            <div class="dest-card-country">United States</div>
+            <span class="dest-card-tag">From SAR 3,200</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <img class="dest-card-img" src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=600&q=75" alt="Istanbul" loading="lazy">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-body">
+            <div class="dest-card-city">Istanbul</div>
+            <div class="dest-card-country">Turkey</div>
+            <span class="dest-card-tag">From SAR 1,200</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <img class="dest-card-img" src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&q=75" alt="Singapore" loading="lazy">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-body">
+            <div class="dest-card-city">Singapore</div>
+            <div class="dest-card-country">Singapore</div>
+            <span class="dest-card-tag">From SAR 2,800</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <img class="dest-card-img" src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=75" alt="Frankfurt" loading="lazy">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-body">
+            <div class="dest-card-city">Frankfurt</div>
+            <div class="dest-card-country">Germany</div>
+            <span class="dest-card-tag">From SAR 1,750</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-arrows">
+      <button class="c-arrow" id="destPrev" onclick="moveCarousel('destTrack','destPrev','destNext',-1)" disabled>
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="c-arrow" id="destNext" onclick="moveCarousel('destTrack','destPrev','destNext',1)">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     A NEW WORLD, WITH SFEER
+════════════════════════════════════════════════════════════ -->
+<section class="section" style="background: var(--grey-light);">
+  <div class="container">
+    <div class="sfeer-split">
+      <div class="sfeer-split-text">
+        <div class="sfeer-logo-text">Sfeer</div>
+        <h2 class="sfeer-split-title">A new world,<br>with Sfeer</h2>
+        <p class="sfeer-split-sub">RIA is proud to introduce Sfeer, our loyalty and lifestyle rewards programme. Earn points on every RIA journey, redeem them for upgrades, exclusive experiences, and more.</p>
+        <a href="#" class="btn btn-orange">Discover Sfeer</a>
+      </div>
+      <div class="sfeer-split-image">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=75" alt="Sfeer experience" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     THE RIA EXPERIENCE (dark section)
+════════════════════════════════════════════════════════════ -->
+<section class="experience-section">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <p class="section-eyebrow">On board &amp; beyond</p>
+        <h2 class="section-title white">The RIA experience</h2>
+        <p class="section-subtitle white">Premium service, world-class comfort, and Saudi hospitality at 35,000 feet.</p>
+      </div>
+      <a href="#" class="btn btn-outline-white">Explore all</a>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-card-img" style="background:linear-gradient(135deg,hsl(263,82%,20%) 0%,hsl(263,82%,12%) 100%);display:flex;align-items:center;justify-content:center;padding:1.25rem;">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=75" alt="Business class" loading="lazy" style="border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.55);width:100%;height:170px;object-fit:cover;">
+        </div>
+        <div class="exp-card-body">
+          <p class="exp-card-label">Business</p>
+          <h3 class="exp-card-title">Business Class</h3>
+          <p class="exp-card-desc">Lay-flat beds, chef-curated dining, and direct aisle access in every seat.</p>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-img" style="background:linear-gradient(135deg,hsl(263,82%,20%) 0%,hsl(263,82%,12%) 100%);display:flex;align-items:center;justify-content:center;padding:1.25rem;">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=75" alt="Lounge" loading="lazy" style="border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.55);width:100%;height:170px;object-fit:cover;">
+        </div>
+        <div class="exp-card-body">
+          <p class="exp-card-label">Lounge</p>
+          <h3 class="exp-card-title">Premium Lounges</h3>
+          <p class="exp-card-desc">Exclusive RIA lounges at King Khalid International Airport and beyond.</p>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-img" style="background:linear-gradient(135deg,hsl(263,82%,20%) 0%,hsl(263,82%,12%) 100%);display:flex;align-items:center;justify-content:center;padding:1.25rem;">
+          <img src="https://images.unsplash.com/photo-1609175332860-a9e9bf7f5cff?w=700&q=75" alt="Dining" loading="lazy" style="border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.55);width:100%;height:170px;object-fit:cover;">
+        </div>
+        <div class="exp-card-body">
+          <p class="exp-card-label">Dining</p>
+          <h3 class="exp-card-title">Curated Cuisine</h3>
+          <p class="exp-card-desc">Menus designed by renowned chefs, inspired by Saudi and global flavours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     THE HEART OF MODERN SAUDI
+════════════════════════════════════════════════════════════ -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="editorial-split">
+      <div class="editorial-image">
+        <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=900&q=75" alt="Riyadh skyline" loading="lazy">
+      </div>
+      <div>
+        <p class="editorial-eyebrow">Saudi Arabia</p>
+        <h2 class="editorial-title">The heart of<br>modern Saudi</h2>
+        <p class="editorial-body">Riyadh is a city of extraordinary contrasts — ancient heritage meets futuristic ambition. From the towering Kingdom Centre to the historic Diriyah district, this is a destination unlike any other. RIA is your gateway to it all.</p>
+        <a href="discover-riyadh.html" class="btn btn-dark">Discover Riyadh</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     RIA CARGO
+════════════════════════════════════════════════════════════ -->
+<section class="section-sm" style="background: var(--grey-light);">
+  <div class="container">
+    <div class="cargo-card">
+      <div class="cargo-card-text">
+        <p class="cargo-card-eyebrow">Freight &amp; Logistics</p>
+        <h2 class="cargo-card-title">RIA Cargo</h2>
+        <p class="cargo-card-desc">Reliable, on-time cargo services connecting Saudi Arabia to the world. Whether it's critical freight or time-sensitive shipments, RIA Cargo has you covered.</p>
+        <a href="#" class="btn btn-orange">Learn about cargo</a>
+      </div>
+      <div class="cargo-card-img">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=75" alt="RIA Cargo" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NEWSLETTER
+════════════════════════════════════════════════════════════ -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div>
+        <p class="section-eyebrow">Stay in the loop</p>
+        <h2 class="nl-title">Get early updates on new destinations, upcoming flights, and what's coming soon</h2>
+        <p class="nl-sub">Be the first to know about exclusive fares and launch offers.</p>
+      </div>
+      <div>
+        <form class="nl-form" onsubmit="return false">
+          <input class="nl-input" type="email" placeholder="Your email address">
+          <button class="nl-btn" type="submit">Subscribe</button>
+        </form>
+        <p style="font-size:.75rem; color:rgba(255,255,255,.3); margin-top:.75rem;">By subscribing you agree to our Privacy Policy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     VISA INFORMATION
+════════════════════════════════════════════════════════════ -->
+<section class="visa-section">
+  <div class="container">
+    <div class="visa-inner">
+      <div class="visa-icon">🛂</div>
+      <div class="visa-text">
+        <h3 class="visa-title">Visa requirements to visit Saudi Arabia</h3>
+        <p class="visa-desc">Travelling to Saudi Arabia? Citizens from over 50 countries can obtain a tourist e-visa online in minutes. Check your eligibility and apply before you fly.</p>
+      </div>
+      <a href="#" class="btn btn-dark" style="flex-shrink:0;">Check requirements</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand-logo">
+          <svg width="28" height="22" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/></svg>
+          <span class="footer-brand-name">RIA</span>
+        </div>
+        <p class="footer-brand-desc">Saudi Arabia's flagship airline — connecting the Kingdom to the world with pride and purpose.</p>
+        <div class="footer-socials">
+          <a class="footer-soc" href="#" title="Twitter/X">𝕏</a>
+          <a class="footer-soc" href="#" title="Instagram">📷</a>
+          <a class="footer-soc" href="#" title="LinkedIn">in</a>
+          <a class="footer-soc" href="#" title="YouTube">▶</a>
+          <a class="footer-soc" href="#" title="Facebook">f</a>
+        </div>
+      </div>
+
+      <!-- Col 1: RIA -->
+      <div>
+        <p class="footer-col-title">RIA</p>
+        <ul class="footer-col-links">
+          <li><a href="#" class="footer-col-link">About RIA</a></li>
+          <li><a href="#" class="footer-col-link">Our Fleet</a></li>
+          <li><a href="#" class="footer-col-link">Destinations</a></li>
+          <li><a href="#" class="footer-col-link">Sustainability</a></li>
+          <li><a href="#" class="footer-col-link">Careers</a></li>
+          <li><a href="#" class="footer-col-link">Press Room</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Experience -->
+      <div>
+        <p class="footer-col-title">Experience</p>
+        <ul class="footer-col-links">
+          <li><a href="#" class="footer-col-link">Business Class</a></li>
+          <li><a href="#" class="footer-col-link">Economy Class</a></li>
+          <li><a href="#" class="footer-col-link">In-flight dining</a></li>
+          <li><a href="#" class="footer-col-link">Entertainment</a></li>
+          <li><a href="#" class="footer-col-link">Lounges</a></li>
+          <li><a href="discover-riyadh.html" class="footer-col-link">Sfeer</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Connect -->
+      <div>
+        <p class="footer-col-title">Connect with us</p>
+        <ul class="footer-col-links">
+          <li><a href="#" class="footer-col-link">Help Centre</a></li>
+          <li><a href="#" class="footer-col-link">Contact Us</a></li>
+          <li><a href="#" class="footer-col-link">Feedback</a></li>
+          <li><a href="#" class="footer-col-link">Lost &amp; Found</a></li>
+          <li><a href="#" class="footer-col-link">Special Assistance</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Business + Newsletter -->
+      <div>
+        <p class="footer-col-title">Business Solutions</p>
+        <ul class="footer-col-links" style="margin-bottom:1.5rem;">
+          <li><a href="#" class="footer-col-link">Corporate Travel</a></li>
+          <li><a href="#" class="footer-col-link">RIA Cargo</a></li>
+          <li><a href="#" class="footer-col-link">Travel Agencies</a></li>
+          <li><a href="#" class="footer-col-link">Charter Flights</a></li>
+        </ul>
+        <p class="footer-col-title">Newsletter</p>
+        <input class="footer-newsletter-input" type="email" placeholder="Enter your email">
+        <button class="footer-newsletter-btn">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 RIA. All rights reserved.</p>
+      <div class="footer-pif">
+        <span>A</span>
+        <span class="footer-pif-badge">PIF Company</span>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

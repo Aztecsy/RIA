@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIA — Discover Riyadh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/><path d="M20 4L28 18L22 28L20 22L18 18L20 4Z" fill="rgba(255,255,255,0.3)"/></svg>
+    <span class="nav-logo-name">RIA</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Book</a>
+    <a href="#" class="nav-link">Manage</a>
+    <a href="plan-book.html" class="nav-link">Destinations</a>
+    <a href="discover-riyadh.html" class="nav-link active">Discover</a>
+    <a href="#" class="nav-link">About</a>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></button>
+    <button class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+    <button class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></button>
+    <button class="nav-icon-btn" id="menuBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/></svg>
+      <span class="nav-logo-name">RIA</span>
+    </a>
+    <button class="nav-icon-btn" id="menuClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <a href="index.html" class="mobile-menu-link">Book <span>›</span></a>
+  <a href="#" class="mobile-menu-link">Manage <span>›</span></a>
+  <a href="plan-book.html" class="mobile-menu-link">Destinations <span>›</span></a>
+  <a href="discover-riyadh.html" class="mobile-menu-link">Discover <span>›</span></a>
+  <a href="#" class="mobile-menu-link">About <span>›</span></a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero" style="min-height:70vh;">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=1920&q=80');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="section-eyebrow fade-up">Discover Riyadh</p>
+    <h1 class="hero-title fade-up d1">Where extraordinary culture<br>meets boundless possibilities</h1>
+    <p class="hero-sub fade-up d2">Riyadh is a city of contrasts, where ancient traditions and modern ambitions exist side by side. Explore the many layers of Saudi Arabia's magnificent capital.</p>
+    <div class="hero-ctas fade-up d3">
+      <a href="#explore" class="btn btn-white btn-lg">Start exploring</a>
+      <a href="plan-book.html" class="btn btn-outline-white btn-lg">Book a flight</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WELCOME TO RIYADH
+════════════════════════════════════════════════════════════ -->
+<section class="section-sm" style="background:#fff;">
+  <div class="container">
+    <div style="max-width:720px; margin: 0 auto; text-align:center; padding: 2.5rem 0;">
+      <p class="section-eyebrow">Welcome</p>
+      <h2 class="section-title" style="margin-bottom:1rem;">Welcome to Riyadh</h2>
+      <p style="font-size:1.05rem; color:var(--grey-text); line-height:1.75;">Riyadh isn't just a city — it's a statement. A place where centuries of heritage meet the unstoppable momentum of Vision 2030. It's a city that invites you to look closer, go deeper, and stay longer. From world-class museums and ancient fortresses to cutting-edge architecture and vibrant dining scenes, Riyadh rewards every kind of traveller.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPLORE RIYADH — ICON CATEGORIES
+════════════════════════════════════════════════════════════ -->
+<section id="explore" class="section" style="background: var(--grey-light);">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:2rem;">
+      <p class="section-eyebrow">Categories</p>
+      <h2 class="section-title">Explore Riyadh, one city at a time</h2>
+      <p class="section-subtitle" style="margin: .5rem auto 0; max-width:480px;">From heritage districts to desert adventures — there's a Riyadh for every type of traveller.</p>
+    </div>
+    <!-- Image-based category cards matching the reference style -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:1rem; margin-top:2.5rem;">
+      <div class="cat-img-card">
+        <img src="https://images.unsplash.com/photo-1548813395-f56b28f6e54d?w=400&q=75" alt="Heritage" loading="lazy">
+        <div class="cat-img-overlay"></div>
+        <span class="cat-img-label">Heritage &amp; Culture</span>
+      </div>
+      <div class="cat-img-card">
+        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&q=75" alt="Desert" loading="lazy">
+        <div class="cat-img-overlay"></div>
+        <span class="cat-img-label">Desert Adventures</span>
+      </div>
+      <div class="cat-img-card">
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&q=75" alt="Food" loading="lazy">
+        <div class="cat-img-overlay"></div>
+        <span class="cat-img-label">Food &amp; Cuisine</span>
+      </div>
+      <div class="cat-img-card">
+        <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&q=75" alt="Shopping" loading="lazy">
+        <div class="cat-img-overlay"></div>
+        <span class="cat-img-label">Shopping</span>
+      </div>
+      <div class="cat-img-card">
+        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&q=75" alt="Art" loading="lazy">
+        <div class="cat-img-overlay"></div>
+        <span class="cat-img-label">Art &amp; Design</span>
+      </div>
+      <div class="cat-img-card">
+        <img src="https://images.unsplash.com/photo-1580502304784-8985b7eb7260?w=400&q=75" alt="Nature" loading="lazy">
+        <div class="cat-img-overlay"></div>
+        <span class="cat-img-label">Nature &amp; Parks</span>
+      </div>
+    </div>
+
+    <style>
+      .cat-img-card {
+        position: relative; border-radius: var(--radius-l);
+        overflow: hidden; aspect-ratio: 1/1; cursor: pointer;
+      }
+      .cat-img-card img { width:100%; height:100%; object-fit:cover; transition: transform .5s ease; }
+      .cat-img-card:hover img { transform: scale(1.06); }
+      .cat-img-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, rgba(8,2,19,.75) 0%, rgba(8,2,19,.05) 55%);
+      }
+      .cat-img-label {
+        position: absolute; bottom: .85rem; left: .9rem; right: .9rem;
+        font-size: .82rem; font-weight: 700; color: var(--white);
+        line-height: 1.25;
+      }
+    </style>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DESIGNED FOR WHAT'S NEXT — EDITORIAL CARDS
+════════════════════════════════════════════════════════════ -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <p class="section-eyebrow">Highlights</p>
+        <h2 class="section-title">Designed for what's next</h2>
+      </div>
+      <a href="#" class="btn btn-dark">See all</a>
+    </div>
+    <div class="exp-grid" style="background:transparent;">
+      <div class="exp-card" style="background:var(--grey-light); border-color:var(--indigo-20);">
+        <div class="exp-card-img">
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=700&q=75" alt="Diriyah" loading="lazy">
+        </div>
+        <div class="exp-card-body">
+          <p class="exp-card-label" style="color:var(--orange);">Heritage</p>
+          <h3 class="exp-card-title" style="color:var(--text-dark);">Diriyah — UNESCO World Heritage</h3>
+          <p class="exp-card-desc" style="color:var(--grey-text);">Explore the birthplace of the Saudi state, now reimagined as a world-class cultural destination.</p>
+        </div>
+      </div>
+      <div class="exp-card" style="background:var(--grey-light); border-color:var(--indigo-20);">
+        <div class="exp-card-img">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=700&q=75" alt="Kingdom Centre" loading="lazy">
+        </div>
+        <div class="exp-card-body">
+          <p class="exp-card-label" style="color:var(--orange);">Architecture</p>
+          <h3 class="exp-card-title" style="color:var(--text-dark);">Kingdom Centre Tower</h3>
+          <p class="exp-card-desc" style="color:var(--grey-text);">An icon of modern Riyadh — take the glass elevator to the Sky Bridge for panoramic city views.</p>
+        </div>
+      </div>
+      <div class="exp-card" style="background:var(--grey-light); border-color:var(--indigo-20);">
+        <div class="exp-card-img">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=700&q=75" alt="Saudi cuisine" loading="lazy">
+        </div>
+        <div class="exp-card-body">
+          <p class="exp-card-label" style="color:var(--orange);">Food</p>
+          <h3 class="exp-card-title" style="color:var(--text-dark);">A culinary capital rising fast</h3>
+          <p class="exp-card-desc" style="color:var(--grey-text);">From heritage Saudi dishes to Michelin-calibre international kitchens — Riyadh's dining scene is unmissable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCE SFEER — ORANGE BANNER
+════════════════════════════════════════════════════════════ -->
+<section class="section-sm" style="background:var(--grey-light);">
+  <div class="container">
+    <div class="sfeer-orange-banner">
+      <div class="sfeer-ob-text">
+        <div class="sfeer-ob-logo">Sfeer</div>
+        <h2 class="sfeer-ob-title">Experience Riyadh<br>with Sfeer</h2>
+        <p class="sfeer-ob-sub">Unlock curated local experiences, priority access to events, and exclusive rewards through RIA's loyalty programme.</p>
+        <a href="#" class="btn btn-dark btn-lg">Join Sfeer</a>
+      </div>
+      <div class="sfeer-ob-image">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=75" alt="Sfeer member" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NEW ADVENTURES AWAIT — ALTERNATING SPLITS
+════════════════════════════════════════════════════════════ -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div style="margin-bottom:3rem;">
+      <p class="section-eyebrow">Experiences</p>
+      <h2 class="section-title">New adventures await you</h2>
+    </div>
+    <div class="split-sections">
+      <!-- Row 1: text left, image right -->
+      <div class="split-row">
+        <div class="split-row-text">
+          <p class="split-row-eyebrow">Desert &amp; Nature</p>
+          <h3 class="split-row-title">Explore the Rub' al Khali — the Empty Quarter</h3>
+          <p class="split-row-body">The world's largest continuous sand desert is a place of extraordinary beauty and silence. Join a guided dune safari at golden hour and witness a landscape that has inspired poets and explorers for millennia.</p>
+          <a href="#" class="btn btn-dark">Plan your desert trip</a>
+        </div>
+        <div class="split-row-img">
+          <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=75" alt="Desert safari" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Row 2: image left, text right -->
+      <div class="split-row reverse">
+        <div class="split-row-img">
+          <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=800&q=75" alt="Old Riyadh" loading="lazy">
+        </div>
+        <div class="split-row-text">
+          <p class="split-row-eyebrow">History &amp; Heritage</p>
+          <h3 class="split-row-title">Lose yourself in the Al-Murabba Historical Palace</h3>
+          <p class="split-row-body">Step into the halls where modern Saudi Arabia was shaped. This beautifully restored palace offers an intimate window into royal life and the country's 20th-century transformation. Adjacent museums bring the full story to life.</p>
+          <a href="#" class="btn btn-dark">Explore heritage</a>
+        </div>
+      </div>
+
+      <!-- Row 3: text left, image right -->
+      <div class="split-row">
+        <div class="split-row-text">
+          <p class="split-row-eyebrow">Arts &amp; Culture</p>
+          <h3 class="split-row-title">The JAX District — Riyadh's creative heartbeat</h3>
+          <p class="split-row-body">Housed in a repurposed oil facility, JAX has become the city's most exciting arts and culture district. Independent galleries, design studios, film screenings, and concept stores fill the industrial space with creative energy.</p>
+          <a href="#" class="btn btn-dark">Discover JAX</a>
+        </div>
+        <div class="split-row-img">
+          <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=75" alt="Art gallery" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Row 4: image left, text right -->
+      <div class="split-row reverse">
+        <div class="split-row-img">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=75" alt="Saudi dining" loading="lazy">
+        </div>
+        <div class="split-row-text">
+          <p class="split-row-eyebrow">Gastronomy</p>
+          <h3 class="split-row-title">Dine across the world without leaving the city</h3>
+          <p class="split-row-body">From traditional Saudi cuisine in heritage restaurants to world-class contemporary dining rooms, Riyadh's restaurant scene is one of the most exciting in the Middle East. Every meal is an adventure.</p>
+          <a href="#" class="btn btn-dark">Find restaurants</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCE THE WONDERS OF SAUDI ARABIA — WONDERS GRID
+════════════════════════════════════════════════════════════ -->
+<section class="section" style="background: var(--grey-light);">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <p class="section-eyebrow">Beyond Riyadh</p>
+        <h2 class="section-title">Experience the wonders of Saudi Arabia</h2>
+        <p class="section-subtitle">The Kingdom has more to offer than any single city. Explore its treasures.</p>
+      </div>
+    </div>
+    <div class="wonders-grid">
+      <div class="dest-card" style="flex:none; aspect-ratio:16/7; min-width:0;">
+        <img class="dest-card-img" src="https://images.unsplash.com/photo-1548813395-f56b28f6e54d?w=1200&q=75" alt="Hegra" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-card-city" style="font-size:1.4rem;">Hegra (Al-Hijr)</div>
+          <div class="dest-card-country">Saudi Arabia's First UNESCO Site</div>
+          <span class="dest-card-tag">Heritage</span>
+        </div>
+      </div>
+      <div class="dest-card" style="flex:none; min-width:0; aspect-ratio:3/2;">
+        <img class="dest-card-img" src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=700&q=75" alt="AlUla" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-card-city">AlUla</div>
+          <div class="dest-card-country">Northwestern Saudi Arabia</div>
+          <span class="dest-card-tag">Nature</span>
+        </div>
+      </div>
+      <div class="dest-card" style="flex:none; min-width:0; aspect-ratio:3/2;">
+        <img class="dest-card-img" src="https://images.unsplash.com/photo-1559334417-a3b7ab0f7b32?w=700&q=75" alt="Red Sea" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-card-city">Red Sea Coast</div>
+          <div class="dest-card-country">Tabuk Province</div>
+          <span class="dest-card-tag">Beach</span>
+        </div>
+      </div>
+      <div class="dest-card" style="flex:none; min-width:0; aspect-ratio:3/2;">
+        <img class="dest-card-img" src="https://images.unsplash.com/photo-1580502304784-8985b7eb7260?w=700&q=75" alt="Abha" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-card-city">Abha</div>
+          <div class="dest-card-country">Aseer Region</div>
+          <span class="dest-card-tag">Mountains</span>
+        </div>
+      </div>
+      <div class="dest-card" style="flex:none; min-width:0; aspect-ratio:3/2;">
+        <img class="dest-card-img" src="https://images.unsplash.com/photo-1523978591478-c753949ff840?w=700&q=75" alt="Jeddah" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-body">
+          <div class="dest-card-city">Jeddah</div>
+          <div class="dest-card-country">Western Saudi Arabia</div>
+          <span class="dest-card-tag">City</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EVENTS WORTH THE JOURNEY
+════════════════════════════════════════════════════════════ -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <p class="section-eyebrow">Coming soon</p>
+        <h2 class="section-title">Events worth the journey</h2>
+        <p class="section-subtitle">Plan your visit around Riyadh's most exciting cultural moments.</p>
+      </div>
+      <a href="#" class="btn btn-dark">All events</a>
+    </div>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-card-img">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=75" alt="Festival" loading="lazy">
+        </div>
+        <div class="event-card-body">
+          <p class="event-card-date">Jul 15 — Aug 31, 2025</p>
+          <h3 class="event-card-title">Riyadh Season 2025</h3>
+          <p class="event-card-loc">📍 Multiple venues, Riyadh</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-card-img">
+          <img src="https://images.unsplash.com/photo-1452802447250-470a88ac82bc?w=700&q=75" alt="Sports event" loading="lazy">
+        </div>
+        <div class="event-card-body">
+          <p class="event-card-date">Sep 5, 2025</p>
+          <h3 class="event-card-title">Saudi Formula E Grand Prix</h3>
+          <p class="event-card-loc">📍 Diriyah Circuit, Riyadh</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-card-img">
+          <img src="https://images.unsplash.com/photo-1496337589254-7e19d01cec44?w=700&q=75" alt="Art week" loading="lazy">
+        </div>
+        <div class="event-card-body">
+          <p class="event-card-date">Oct 12 — Oct 20, 2025</p>
+          <h3 class="event-card-title">Riyadh Art Week</h3>
+          <p class="event-card-loc">📍 JAX District, Riyadh</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-card-img">
+          <img src="https://images.unsplash.com/photo-1510925758641-869d353cecc7?w=700&q=75" alt="Food festival" loading="lazy">
+        </div>
+        <div class="event-card-body">
+          <p class="event-card-date">Nov 8 — Nov 12, 2025</p>
+          <h3 class="event-card-title">Saudi Food Festival</h3>
+          <p class="event-card-loc">📍 Boulevard Riyadh City</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-card-img">
+          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=700&q=75" alt="Film festival" loading="lazy">
+        </div>
+        <div class="event-card-body">
+          <p class="event-card-date">Dec 3 — Dec 10, 2025</p>
+          <h3 class="event-card-title">Red Sea International Film Festival</h3>
+          <p class="event-card-loc">📍 Old Jeddah</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-card-img">
+          <img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=700&q=75" alt="Music festival" loading="lazy">
+        </div>
+        <div class="event-card-body">
+          <p class="event-card-date">Dec 20, 2025</p>
+          <h3 class="event-card-title">Saudi National Day Concerts</h3>
+          <p class="event-card-loc">📍 King Fahd Stadium, Riyadh</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SAUDI TOURISM CTA
+════════════════════════════════════════════════════════════ -->
+<section class="section-sm" style="background:var(--grey-light);">
+  <div class="container">
+    <div class="tourism-cta">
+      <div class="tourism-cta-bg" style="background-image:url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1600&q=80');"></div>
+      <div class="tourism-cta-overlay"></div>
+      <div class="tourism-cta-content">
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem;">Saudi Tourism</p>
+        <h2 class="tourism-cta-title">Find the spirit of Saudi Arabia</h2>
+        <p class="tourism-cta-sub">The Saudi Tourism Authority is your partner in discovering everything the Kingdom has to offer — from ancient wonders to ultra-modern marvels.</p>
+        <a href="#" class="btn btn-orange btn-lg">Explore Saudi Tourism</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPLORE MORE WITH SFEER BANNER
+════════════════════════════════════════════════════════════ -->
+<section class="section-sm" style="background:#fff;">
+  <div class="container">
+    <div class="sfeer-explore-banner">
+      <div class="sfeer-explore-text">
+        <div class="sfeer-explore-logo">Sfeer</div>
+        <h2 class="sfeer-explore-title">Explore more with Sfeer</h2>
+        <p class="sfeer-explore-sub">Earn points on every RIA flight and unlock exclusive access to events, restaurants, and experiences across Riyadh and beyond.</p>
+      </div>
+      <div class="sfeer-explore-cta">
+        <a href="#" class="btn btn-orange btn-lg">Join Sfeer today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NEWSLETTER
+════════════════════════════════════════════════════════════ -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div>
+        <p class="section-eyebrow">Stay in the loop</p>
+        <h2 class="nl-title">The latest updates straight to your inbox</h2>
+        <p class="nl-sub">From new routes to Riyadh guides and Sfeer updates — we'll keep you in the know.</p>
+      </div>
+      <div>
+        <form class="nl-form" onsubmit="return false">
+          <input class="nl-input" type="email" placeholder="Your email address">
+          <button class="nl-btn" type="submit">Subscribe</button>
+        </form>
+        <p style="font-size:.75rem; color:rgba(255,255,255,.3); margin-top:.75rem;">Unsubscribe at any time. We respect your privacy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-logo">
+          <svg width="28" height="22" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/></svg>
+          <span class="footer-brand-name">RIA</span>
+        </div>
+        <p class="footer-brand-desc">Saudi Arabia's flagship airline — connecting the Kingdom to the world with pride and purpose.</p>
+        <div class="footer-socials">
+          <a class="footer-soc" href="#" title="Twitter/X">𝕏</a>
+          <a class="footer-soc" href="#" title="Instagram">📷</a>
+          <a class="footer-soc" href="#" title="LinkedIn">in</a>
+          <a class="footer-soc" href="#" title="YouTube">▶</a>
+          <a class="footer-soc" href="#" title="Facebook">f</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">RIA</p>
+        <ul class="footer-col-links">
+          <li><a href="#" class="footer-col-link">About RIA</a></li>
+          <li><a href="#" class="footer-col-link">Our Fleet</a></li>
+          <li><a href="plan-book.html" class="footer-col-link">Destinations</a></li>
+          <li><a href="#" class="footer-col-link">Sustainability</a></li>
+          <li><a href="#" class="footer-col-link">Careers</a></li>
+          <li><a href="#" class="footer-col-link">Press Room</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Experience</p>
+        <ul class="footer-col-links">
+          <li><a href="#" class="footer-col-link">Business Class</a></li>
+          <li><a href="#" class="footer-col-link">Economy Class</a></li>
+          <li><a href="#" class="footer-col-link">In-flight dining</a></li>
+          <li><a href="#" class="footer-col-link">Entertainment</a></li>
+          <li><a href="#" class="footer-col-link">Lounges</a></li>
+          <li><a href="discover-riyadh.html" class="footer-col-link">Sfeer</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Connect with us</p>
+        <ul class="footer-col-links">
+          <li><a href="#" class="footer-col-link">Help Centre</a></li>
+          <li><a href="#" class="footer-col-link">Contact Us</a></li>
+          <li><a href="#" class="footer-col-link">Feedback</a></li>
+          <li><a href="#" class="footer-col-link">Lost &amp; Found</a></li>
+          <li><a href="#" class="footer-col-link">Special Assistance</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Business Solutions</p>
+        <ul class="footer-col-links" style="margin-bottom:1.5rem;">
+          <li><a href="#" class="footer-col-link">Corporate Travel</a></li>
+          <li><a href="#" class="footer-col-link">RIA Cargo</a></li>
+          <li><a href="#" class="footer-col-link">Travel Agencies</a></li>
+          <li><a href="#" class="footer-col-link">Charter Flights</a></li>
+        </ul>
+        <p class="footer-col-title">Newsletter</p>
+        <input class="footer-newsletter-input" type="email" placeholder="Enter your email">
+        <button class="footer-newsletter-btn">Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 RIA. All rights reserved.</p>
+      <div class="footer-pif">
+        <span>A</span>
+        <span class="footer-pif-badge">PIF Company</span>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
