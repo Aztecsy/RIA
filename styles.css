@@ -372,12 +372,12 @@ ul { list-style: none; }
 }
 .c-arrow {
   width: 42px; height: 42px; border-radius: 50%;
-  background: var(--bg-nav); border: none;
+  background: var(--orange); border: none;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; transition: var(--t); color: var(--white);
   flex-shrink: 0;
 }
-.c-arrow:hover { background: var(--purple-hover); transform: scale(1.06); }
+.c-arrow:hover { background: var(--orange-dark); transform: scale(1.06); }
 .c-arrow:disabled { background: var(--indigo-20); color: var(--indigo-40); cursor: default; transform: none; }
 .c-arrow svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
@@ -671,8 +671,9 @@ ul { list-style: none; }
 .manage-card-icon {
   width: 46px; height: 46px; background: var(--grey-light);
   border-radius: var(--radius-m); display: flex; align-items: center;
-  justify-content: center; font-size: 1.35rem;
+  justify-content: center;
 }
+.manage-card-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--indigo-70); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .manage-card-title { font-size: .95rem; font-weight: 700; color: var(--text-dark); line-height: 1.25; }
 .manage-card-desc { font-size: .82rem; color: var(--grey-text); line-height: 1.55; flex: 1; }
 .manage-card-arrow {
@@ -686,7 +687,7 @@ ul { list-style: none; }
    ============================================================ */
 .plane-band {
   position: relative; overflow: hidden;
-  min-height: 340px; display: flex; align-items: center;
+  min-height: 220px; display: flex; align-items: center;
 }
 .plane-band-bg {
   position: absolute; inset: 0; background-size: cover; background-position: center;
