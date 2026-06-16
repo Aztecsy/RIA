@@ -324,10 +324,10 @@ ul { list-style: none; }
 .search-tab:hover { color: var(--white); background: var(--bg-nav); }
 .search-fields {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr auto;
   gap: .85rem; align-items: end;
 }
-@media (max-width: 1024px) { .search-fields { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 1100px) { .search-fields { grid-template-columns: 1fr 1fr 1fr; } }
 @media (max-width: 600px)  { .search-fields { grid-template-columns: 1fr; } }
 .sf-group { display: flex; flex-direction: column; gap: .3rem; }
 .sf-label {
