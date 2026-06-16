@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RIA — Plan &amp; Book</title>
+  <title>RIA — Manage your booking</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Plan page specific overrides */
+    /* Manage page hero — reuses plan-hero pattern */
     .plan-hero {
       background: var(--bg-dark);
       position: relative;
@@ -46,40 +46,70 @@
       font-size: .98rem; color: rgba(255,255,255,.6);
       max-width: 460px; line-height: 1.65; margin-bottom: 2.5rem;
     }
-    .plan-search-wrap {
+
+    /* Booking lookup form */
+    .manage-lookup {
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--radius-l);
       padding: 1.5rem;
       backdrop-filter: blur(12px);
-      max-width: 900px;
+      max-width: 640px;
+      display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;
     }
+    .manage-lookup .sf-group { flex: 1; min-width: 180px; }
+    .manage-lookup .sf-label {
+      display: block; font-size: .72rem; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: rgba(255,255,255,.4); margin-bottom: .4rem;
+    }
+    .manage-lookup .sf-input {
+      width: 100%; padding: .65rem .9rem;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-s);
+      color: var(--white); font-size: .92rem; font-family: var(--font);
+      transition: var(--t);
+    }
+    .manage-lookup .sf-input::placeholder { color: rgba(255,255,255,.3); }
+    .manage-lookup .sf-input:focus { outline: none; border-color: var(--orange); }
 
-    /* Where we fly */
-    .fly-section { padding: 5.5rem 0; background: #fff; }
-    .fly-inner {
-      display: grid; grid-template-columns: 1fr 1.6fr;
-      gap: 4rem; align-items: center;
+    /* Travel info strip */
+    .travel-info {
+      background: var(--bg-dark);
+      padding: 4rem 0;
     }
-    @media (max-width: 900px) { .fly-inner { grid-template-columns: 1fr; } }
-    .fly-text-title { font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 700; color: var(--text-dark); line-height: 1.1; margin-bottom: .85rem; }
-    .fly-text-body { font-size: .92rem; color: var(--grey-text); line-height: 1.7; margin-bottom: 1.75rem; }
-    .fly-stats {
-      display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;
+    .travel-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
-    .fly-stat { }
-    .fly-stat-num { font-size: 2rem; font-weight: 800; color: var(--bg-nav); line-height: 1; }
-    .fly-stat-label { font-size: .78rem; color: var(--grey-text); margin-top: .2rem; }
-
-    /* Route tags */
-    .route-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
-    .route-tag {
-      background: var(--grey-light); border: 1.5px solid var(--indigo-20);
-      border-radius: var(--radius-xl); padding: .35rem .9rem;
-      font-size: .8rem; font-weight: 500; color: var(--text-dark);
-      cursor: pointer; transition: var(--t);
+    @media (max-width: 768px) { .travel-info-grid { grid-template-columns: 1fr; } }
+    .info-card {
+      background: var(--bg-section);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--radius-l);
+      padding: 2rem;
+      transition: var(--t);
     }
-    .route-tag:hover { border-color: var(--bg-nav); color: var(--bg-nav); background: #fff; }
+    .info-card:hover { transform: translateY(-3px); border-color: rgba(255,107,53,.3); }
+    .info-card-icon {
+      font-size: 1.75rem; margin-bottom: 1rem;
+    }
+    .info-card-title {
+      font-size: 1rem; font-weight: 700; color: var(--white);
+      margin-bottom: .5rem;
+    }
+    .info-card-desc {
+      font-size: .88rem; color: rgba(255,255,255,.5); line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .info-card-link {
+      font-size: .82rem; font-weight: 600; color: var(--orange);
+      display: inline-flex; align-items: center; gap: .3rem;
+      transition: var(--t);
+    }
+    .info-card-link:hover { gap: .5rem; }
   </style>
 </head>
 <body>
@@ -92,8 +122,8 @@
   </a>
   <div class="nav-links">
     <a href="index.html" class="nav-link">Book</a>
-    <a href="manage.html" class="nav-link">Manage</a>
-    <a href="plan-book.html" class="nav-link active">Destinations</a>
+    <a href="manage.html" class="nav-link active">Manage</a>
+    <a href="plan-book.html" class="nav-link">Destinations</a>
     <a href="discover-riyadh.html" class="nav-link">Discover</a>
     <a href="#" class="nav-link">About</a>
   </div>
@@ -122,85 +152,39 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
-     PLAN HERO + SEARCH
+     HERO
 ════════════════════════════════════════════════════════════ -->
 <section class="plan-hero">
   <div class="plan-hero-mesh"></div>
   <div class="plan-hero-radial"></div>
   <div class="plan-hero-content">
-    <p class="plan-hero-label fade-up">Plan &amp; Book</p>
-    <h1 class="plan-hero-title fade-up d1">Plan your next journey with ease</h1>
-    <p class="plan-hero-sub fade-up d2">Discover RIA destinations, explore travel options, and book with confidence. We've made it simple, intuitive, and convenient for you. Your next adventure begins here.</p>
+    <p class="plan-hero-label fade-up">Your journey</p>
+    <h1 class="plan-hero-title fade-up d1">Manage your booking</h1>
+    <p class="plan-hero-sub fade-up d2">Add extras, check in, or make changes — all in one place.</p>
 
-    <div class="plan-search-wrap fade-up d3">
-      <div class="search-tabs" style="border-bottom-color:rgba(255,255,255,.1); margin-bottom:1.25rem;">
-        <button class="search-tab active" onclick="setTab(this)" style="color:rgba(255,255,255,.5);">One way</button>
-        <button class="search-tab" onclick="setTab(this)" style="color:rgba(255,255,255,.5);">Round trip</button>
-        <button class="search-tab" onclick="setTab(this)" style="color:rgba(255,255,255,.5);">Multi-city</button>
+    <div class="manage-lookup fade-up d3">
+      <div class="sf-group">
+        <label class="sf-label">Booking reference</label>
+        <input class="sf-input" type="text" placeholder="e.g. RA4729X">
       </div>
-      <div class="search-fields" style="grid-template-columns: 1fr 1fr 1fr 1fr auto;">
-        <div class="sf-group">
-          <label class="sf-label" style="color:rgba(255,255,255,.4);">From</label>
-          <input class="sf-input" type="text" placeholder="Riyadh (RUH)" style="background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.12); color:var(--white);">
-        </div>
-        <div class="sf-group">
-          <label class="sf-label" style="color:rgba(255,255,255,.4);">To</label>
-          <input class="sf-input" type="text" placeholder="Where to?" style="background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.12); color:var(--white);">
-        </div>
-        <div class="sf-group">
-          <label class="sf-label" style="color:rgba(255,255,255,.4);">Departure</label>
-          <input class="sf-input" type="date" style="background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.12); color:rgba(255,255,255,.7); colorscheme:dark;">
-        </div>
-        <div class="sf-group">
-          <label class="sf-label" style="color:rgba(255,255,255,.4);">Return</label>
-          <input class="sf-input" type="date" style="background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.12); color:rgba(255,255,255,.7); colorscheme:dark;">
-        </div>
-        <button class="search-btn">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Search
-        </button>
+      <div class="sf-group">
+        <label class="sf-label">Last name</label>
+        <input class="sf-input" type="text" placeholder="As on your passport">
       </div>
+      <button class="btn btn-orange" style="white-space:nowrap; height:44px;">Find booking</button>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     WHERE WE FLY
-════════════════════════════════════════════════════════════ -->
-<section class="fly-section">
-  <div class="container">
-    <div style="max-width:680px;">
-      <p class="section-eyebrow">Our network</p>
-      <h2 class="fly-text-title">Where we fly</h2>
-      <p class="fly-text-body">Every destination tells a story. Discover RIA's world map and find the connections that inspire you. RIA connects Riyadh to the most iconic cities across six continents — and our network is growing every season.</p>
-      <a href="#" class="btn btn-dark">More destinations</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     PLANE IMAGE BAND
-════════════════════════════════════════════════════════════ -->
-<div class="plane-band" style="min-height:380px;">
-  <div class="plane-band-bg" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80');"></div>
-  <div class="plane-band-overlay"></div>
-  <div class="plane-band-content">
-    <p style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.5rem;">RIA Fleet</p>
-    <h2 class="plane-band-title">A fleet built for the future</h2>
-    <p class="plane-band-sub">State-of-the-art aircraft, industry-leading fuel efficiency, and a cabin designed for maximum comfort — this is how RIA flies.</p>
-    <a href="#" class="btn btn-white">Explore our fleet</a>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     MANAGE YOUR ORDER
+     MANAGE ACTIONS
 ════════════════════════════════════════════════════════════ -->
 <section class="manage-section">
   <div class="container">
     <div style="max-width:600px; margin-bottom:2.5rem;">
-      <p class="section-eyebrow">Your booking</p>
-      <h2 class="section-title">Manage your order</h2>
-      <p class="section-subtitle">Review and update booking information in a few easy steps. Whether you need to add baggage, change a seat, or make any modifications, RIA makes it simple.</p>
+      <p class="section-eyebrow">What would you like to do</p>
+      <h2 class="section-title">Manage your trip</h2>
+      <p class="section-subtitle">Review and update your booking in a few easy steps. Whether you need to add baggage, change a seat, or make modifications, RIA makes it simple.</p>
     </div>
     <div class="manage-grid">
       <div class="manage-card">
@@ -240,13 +224,40 @@
         <div class="manage-card-arrow">›</div>
       </div>
     </div>
-
-    <!-- Laptop / device image — matches reference -->
-    <div style="margin-top:3rem; border-radius:var(--radius-l); overflow:hidden; aspect-ratio:16/7;">
-      <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1600&q=80" alt="RIA booking platform" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
-    </div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TRAVEL INFO STRIP
+════════════════════════════════════════════════════════════ -->
+<div class="travel-info">
+  <div class="container">
+    <div style="margin-bottom:2rem;">
+      <p class="section-eyebrow">Before you fly</p>
+      <h2 class="section-title white">Good to know</h2>
+    </div>
+    <div class="travel-info-grid">
+      <div class="info-card">
+        <div class="info-card-icon">🧳</div>
+        <h3 class="info-card-title">Baggage Policy</h3>
+        <p class="info-card-desc">Economy includes 23 kg checked baggage. Business Class passengers receive 32 kg. Additional pieces available to purchase.</p>
+        <a href="#" class="info-card-link">Learn more ›</a>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">🪪</div>
+        <h3 class="info-card-title">Travel Documents</h3>
+        <p class="info-card-desc">Ensure your passport is valid for at least 6 months beyond your travel date. Check visa requirements for your destination.</p>
+        <a href="#" class="info-card-link">Learn more ›</a>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">🕐</div>
+        <h3 class="info-card-title">Check-in Times</h3>
+        <p class="info-card-desc">Online check-in opens 24 hours before departure. Airport check-in desks close 60 minutes before scheduled departure.</p>
+        <a href="#" class="info-card-link">Learn more ›</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════
      NEWSLETTER
