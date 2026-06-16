@@ -24,15 +24,15 @@
   </a>
 
   <div class="nav-links">
-    <a href="index.html" class="nav-link active">Book</a>
-    <a href="manage.html" class="nav-link">Manage</a>
-    <a href="plan-book.html" class="nav-link">Destinations</a>
+    <a href="index.html"         class="nav-link active">Book</a>
+    <a href="manage.html"        class="nav-link">Manage</a>
+    <a href="plan-book.html"     class="nav-link">Destinations</a>
     <a href="discover-riyadh.html" class="nav-link">Discover</a>
-    <a href="#" class="nav-link">About</a>
+    <a href="#"                  class="nav-link">About</a>
   </div>
 
   <div class="nav-actions">
-    <button class="nav-icon-btn" aria-label="Bag">
+    <button class="nav-icon-btn" aria-label="Shopping bag">
       <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
     </button>
     <button class="nav-icon-btn" aria-label="Profile">
@@ -51,33 +51,35 @@
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-head">
     <a href="index.html" class="nav-logo">
-      <svg class="nav-logo-icon" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/></svg>
+      <svg class="nav-logo-icon" viewBox="0 0 40 32" fill="none">
+        <path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/>
+      </svg>
       <span class="nav-logo-name">RIA</span>
     </a>
     <button class="nav-icon-btn" id="menuClose" aria-label="Close">
       <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
-  <a href="index.html" class="mobile-menu-link">Book <span>›</span></a>
-  <a href="manage.html" class="mobile-menu-link">Manage <span>›</span></a>
-  <a href="plan-book.html" class="mobile-menu-link">Destinations <span>›</span></a>
+  <a href="index.html"          class="mobile-menu-link">Book <span>›</span></a>
+  <a href="manage.html"         class="mobile-menu-link">Manage <span>›</span></a>
+  <a href="plan-book.html"      class="mobile-menu-link">Destinations <span>›</span></a>
   <a href="discover-riyadh.html" class="mobile-menu-link">Discover <span>›</span></a>
-  <a href="#" class="mobile-menu-link">About <span>›</span></a>
+  <a href="#"                   class="mobile-menu-link">About <span>›</span></a>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
      HERO
 ════════════════════════════════════════════════════════════ -->
 <section class="hero">
-  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1920&q=80')"></div>
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=1920&q=80')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="section-eyebrow fade-up" style="margin-bottom:.75rem;">Now taking flight</p>
     <h1 class="hero-title fade-up d1">The journey<br>begins here</h1>
-    <p class="hero-sub fade-up d2">Discover RIA destinations, explore travel options, and book with confidence. We've made it simple, intuitive, and convenient for you. Your next adventure begins here.</p>
+    <p class="hero-sub fade-up d2">Discover RIA destinations, explore travel options, and book with confidence. We've made it simple, intuitive, and convenient for you.</p>
     <div class="hero-ctas fade-up d3">
       <a href="plan-book.html" class="btn btn-white btn-lg">Explore destinations</a>
-      <a href="#" class="btn btn-outline-white btn-lg">Learn more</a>
+      <a href="#"              class="btn btn-outline-white btn-lg">Learn more</a>
     </div>
   </div>
 </section>
@@ -85,7 +87,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      FLIGHT SEARCH WIDGET
 ════════════════════════════════════════════════════════════ -->
-<div class="section-sm" style="background:#fff;">
+<div style="background:#fff; padding-bottom: 4rem;">
   <div class="container">
     <div class="search-widget overlap">
       <div class="search-tabs">
@@ -107,10 +109,6 @@
           <input class="sf-input" type="date">
         </div>
         <div class="sf-group">
-          <label class="sf-label">Return</label>
-          <input class="sf-input" type="date">
-        </div>
-        <div class="sf-group">
           <label class="sf-label">Passengers</label>
           <input class="sf-input" type="text" placeholder="1 adult">
         </div>
@@ -126,7 +124,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      FOR JOURNEYS THAT GO FURTHER — DESTINATIONS CAROUSEL
 ════════════════════════════════════════════════════════════ -->
-<section class="section" style="background:#fff;">
+<section class="section" style="background:#fff; padding-top: 0;">
   <div class="container">
     <div class="section-header-row">
       <div>
@@ -137,7 +135,7 @@
       <a href="plan-book.html" class="btn btn-dark">View all destinations</a>
     </div>
 
-    <div id="destCarousel" class="carousel-outer">
+    <div class="carousel-outer">
       <div class="carousel-track" id="destTrack">
         <div class="dest-card">
           <img class="dest-card-img" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=75" alt="Paris" loading="lazy">
@@ -225,7 +223,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     A NEW WORLD, WITH SFEER
+     A NEW WORLD, WITH SFEER (light section, dark card inside)
 ════════════════════════════════════════════════════════════ -->
 <section class="section" style="background: var(--grey-light);">
   <div class="container">
@@ -258,8 +256,8 @@
     </div>
     <div class="exp-grid">
       <div class="exp-card">
-        <div class="exp-card-img" style="background:linear-gradient(135deg,hsl(263,82%,20%) 0%,hsl(263,82%,12%) 100%);display:flex;align-items:center;justify-content:center;padding:1.25rem;">
-          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=75" alt="Business class" loading="lazy" style="border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.55);width:100%;height:170px;object-fit:cover;">
+        <div class="exp-card-img">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=75" alt="Business class" loading="lazy">
         </div>
         <div class="exp-card-body">
           <p class="exp-card-label">Business</p>
@@ -268,8 +266,8 @@
         </div>
       </div>
       <div class="exp-card">
-        <div class="exp-card-img" style="background:linear-gradient(135deg,hsl(263,82%,20%) 0%,hsl(263,82%,12%) 100%);display:flex;align-items:center;justify-content:center;padding:1.25rem;">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=75" alt="Lounge" loading="lazy" style="border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.55);width:100%;height:170px;object-fit:cover;">
+        <div class="exp-card-img">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=75" alt="Lounge" loading="lazy">
         </div>
         <div class="exp-card-body">
           <p class="exp-card-label">Lounge</p>
@@ -278,8 +276,8 @@
         </div>
       </div>
       <div class="exp-card">
-        <div class="exp-card-img" style="background:linear-gradient(135deg,hsl(263,82%,20%) 0%,hsl(263,82%,12%) 100%);display:flex;align-items:center;justify-content:center;padding:1.25rem;">
-          <img src="https://images.unsplash.com/photo-1609175332860-a9e9bf7f5cff?w=700&q=75" alt="Dining" loading="lazy" style="border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.55);width:100%;height:170px;object-fit:cover;">
+        <div class="exp-card-img">
+          <img src="https://images.unsplash.com/photo-1609175332860-a9e9bf7f5cff?w=700&q=75" alt="Dining" loading="lazy">
         </div>
         <div class="exp-card-body">
           <p class="exp-card-label">Dining</p>
@@ -292,7 +290,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     THE HEART OF MODERN SAUDI
+     THE HEART OF MODERN SAUDI (white section)
 ════════════════════════════════════════════════════════════ -->
 <section class="section" style="background:#fff;">
   <div class="container">
@@ -311,26 +309,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     RIA CARGO
-════════════════════════════════════════════════════════════ -->
-<section class="section-sm" style="background: var(--grey-light);">
-  <div class="container">
-    <div class="cargo-card">
-      <div class="cargo-card-text">
-        <p class="cargo-card-eyebrow">Freight &amp; Logistics</p>
-        <h2 class="cargo-card-title">RIA Cargo</h2>
-        <p class="cargo-card-desc">Reliable, on-time cargo services connecting Saudi Arabia to the world. Whether it's critical freight or time-sensitive shipments, RIA Cargo has you covered.</p>
-        <a href="#" class="btn btn-orange">Learn about cargo</a>
-      </div>
-      <div class="cargo-card-img">
-        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=75" alt="RIA Cargo" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     NEWSLETTER
+     NEWSLETTER (dark section)
 ════════════════════════════════════════════════════════════ -->
 <section class="newsletter-section">
   <div class="container">
@@ -352,7 +331,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     VISA INFORMATION
+     VISA REQUIREMENTS (light section)
 ════════════════════════════════════════════════════════════ -->
 <section class="visa-section">
   <div class="container">
@@ -368,28 +347,28 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     FOOTER
+     FOOTER (very dark)
 ════════════════════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
-      <!-- Brand -->
       <div>
         <div class="footer-brand-logo">
-          <svg width="28" height="22" viewBox="0 0 40 32" fill="none"><path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/></svg>
+          <svg width="28" height="22" viewBox="0 0 40 32" fill="none">
+            <path d="M20 4L36 16L28 18L22 28L18 18L4 20L20 4Z" fill="#FF6B35"/>
+          </svg>
           <span class="footer-brand-name">RIA</span>
         </div>
         <p class="footer-brand-desc">Saudi Arabia's flagship airline — connecting the Kingdom to the world with pride and purpose.</p>
         <div class="footer-socials">
           <a class="footer-soc" href="#" title="Twitter/X">𝕏</a>
-          <a class="footer-soc" href="#" title="Instagram">📷</a>
+          <a class="footer-soc" href="#" title="Instagram">▣</a>
           <a class="footer-soc" href="#" title="LinkedIn">in</a>
           <a class="footer-soc" href="#" title="YouTube">▶</a>
           <a class="footer-soc" href="#" title="Facebook">f</a>
         </div>
       </div>
 
-      <!-- Col 1: RIA -->
       <div>
         <p class="footer-col-title">RIA</p>
         <ul class="footer-col-links">
@@ -402,7 +381,6 @@
         </ul>
       </div>
 
-      <!-- Col 2: Experience -->
       <div>
         <p class="footer-col-title">Experience</p>
         <ul class="footer-col-links">
@@ -411,11 +389,10 @@
           <li><a href="#" class="footer-col-link">In-flight dining</a></li>
           <li><a href="#" class="footer-col-link">Entertainment</a></li>
           <li><a href="#" class="footer-col-link">Lounges</a></li>
-          <li><a href="discover-riyadh.html" class="footer-col-link">Sfeer</a></li>
+          <li><a href="#" class="footer-col-link">Sfeer</a></li>
         </ul>
       </div>
 
-      <!-- Col 3: Connect -->
       <div>
         <p class="footer-col-title">Connect with us</p>
         <ul class="footer-col-links">
@@ -427,7 +404,6 @@
         </ul>
       </div>
 
-      <!-- Col 4: Business + Newsletter -->
       <div>
         <p class="footer-col-title">Business Solutions</p>
         <ul class="footer-col-links" style="margin-bottom:1.5rem;">
